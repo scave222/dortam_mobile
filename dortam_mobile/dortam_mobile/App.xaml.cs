@@ -20,8 +20,8 @@ namespace dortam_mobile
             DependencyService.Register<LocalDatabaseService>();
             DependencyService.Register<StorageService>();
             DependencyService.Register<ServiceProvider>();
-            //MainPage = new LoginPage();
-            MainPage = new AppShell();
+            MainPage = new LoginPage();
+            //MainPage = new AppShell();
         }
 
         protected override void OnStart()
