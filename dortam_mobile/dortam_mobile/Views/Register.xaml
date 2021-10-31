@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:PancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="dortam_mobile.Views.Register">
+    <ContentPage.Content>
+        <ScrollView Padding="0">
+            <Grid>
+                <StackLayout Padding="0" Margin="0">
+                    <Frame HeightRequest="150" HorizontalOptions="FillAndExpand" Padding="0">
+                        <Image Source="bgimage" Aspect="Fill" Margin="0"/>
+                    </Frame>
+                </StackLayout>
+                <ScrollView Margin="15, 110, 15, 0">
+                    <Frame BackgroundColor="White" HasShadow="True" HorizontalOptions="FillAndExpand">
+                        <StackLayout>
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                <Label Text="REGISTER" FontSize="Medium" FontAttributes="Bold"></Label>
+                            </StackLayout>
+                            <ActivityIndicator Color="Orange" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+                            <StackLayout Margin="0, 25, 0, 0">
+                                <Frame BackgroundColor="White" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                            <Image Source="UserIcon"/>
+
+                                        </Frame>
+                                        <Entry Placeholder="First Name" TextColor="{StaticResource Primary}" Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" Margin="0, 0, 15, 0"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame BackgroundColor="White" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                            <Image Source="UserIcon"/>
+
+                                        </Frame>
+                                        <Entry Placeholder="Middle Name" TextColor="{StaticResource Primary}" Text="{Binding MiddleName}" HorizontalOptions="FillAndExpand" Margin="0, 0, 15, 0"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame BackgroundColor="White" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                            <Image Source="UserIcon"/>
+
+                                        </Frame>
+                                        <Entry Placeholder="Last Name"  TextColor="{StaticResource Primary}" Text="{Binding LastName}" HorizontalOptions="FillAndExpand" Margin="0, 0, 15, 0"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame BackgroundColor="White" BorderColor="DarkGray" Padding="0" Margin="0,15,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                            <Image Source="lock" Aspect="Fill" Margin="0"/>
+                                        </Frame>
+                                        <Entry Placeholder="Password" IsPassword="True" TextColor="{StaticResource Primary}" Text="{Binding Password}" HorizontalOptions="FillAndExpand" Margin="0, 0, 15, 0"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame BackgroundColor="White" BorderColor="DarkGray" Padding="0" Margin="0,15,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                            <Image Source="lock" Aspect="Fill" Margin="0"/>
+                                        </Frame>
+                                        <Entry Placeholder="Confirm Password" IsPassword="True" TextColor="{StaticResource Primary}" Text="{Binding ConfirmPassword}" HorizontalOptions="FillAndExpand" Margin="0, 0, 15, 0"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame BackgroundColor="White" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                            <Image Source="mail"/>
+
+                                        </Frame>
+                                        <Entry Placeholder="Email" TextColor="{StaticResource Primary}" Text="{Binding Email}" HorizontalOptions="FillAndExpand" Margin="0, 0, 15, 0"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <CheckBox IsChecked="false" Color="{StaticResource Primary}"/>
+
+
+                                <Label Text="Remember password?" HorizontalTextAlignment="Start" TextColor="{StaticResource Primary}" HorizontalOptions="StartAndExpand" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+
+                            </StackLayout>
+                            <StackLayout>
+                                <Button Text="REGISTER" BackgroundColor="{StaticResource Primary}" Command="{Binding RegisterCommand}" TextColor="White" FontAttributes="Bold" CornerRadius="20" />
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Label Text="Already Have an Account?" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+                                    <Label Text="Login" HorizontalTextAlignment="Center" TextColor="{StaticResource Primary}" FontAttributes="Bold" VerticalTextAlignment="Center">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Login"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Frame>
+                </ScrollView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

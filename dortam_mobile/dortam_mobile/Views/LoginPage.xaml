@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="dortam_mobile.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Content>
+        <ScrollView Padding="0">
+
+            <Grid>
+                <StackLayout Padding="0" Margin="0">
+                    <Frame HeightRequest="150" HorizontalOptions="FillAndExpand" Padding="0">
+                        <Image Source="bgimage" Aspect="Fill" Margin="0"/>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="15, 110, 15, 0">
+
+                    <Frame x:Name="FrameColor" BackgroundColor="White" HasShadow="True" HeightRequest="480" HorizontalOptions="FillAndExpand">
+                        <StackLayout>
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                <Label Text="Login" FontSize="Medium" FontAttributes="Bold"></Label>
+                            </StackLayout>
+
+                            <StackLayout Margin="0, 25, 0, 0">
+                                <ActivityIndicator Color="Orange" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+                                <Frame BackgroundColor="White" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                            <Image Source="mail"/>
+
+                                        </Frame>
+                                        <Entry Placeholder="Email" TextColor="{StaticResource Primary}" Text="{Binding Email}" HorizontalOptions="FillAndExpand" Margin="0, 0, 15, 0"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame BackgroundColor="White" BorderColor="DarkGray" Padding="0" Margin="0,15,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                            <Image Source="lock" Aspect="Fill" Margin="0"/>
+                                        </Frame>
+                                        <Entry Placeholder="Password" IsPassword="True" TextColor="{StaticResource Primary}" Text="{Binding Password}" HorizontalOptions="FillAndExpand" Margin="0, 0, 15, 0"></Entry>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <CheckBox IsChecked="false" Color="{StaticResource Primary}"/>
+                                <!--<Label Text="Remind" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>-->
+
+                                <Label Text="Remember password?" HorizontalTextAlignment="Start" TextColor="{StaticResource Primary}" HorizontalOptions="StartAndExpand" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+
+                            </StackLayout>
+                            <Button Text="LOGIN" BackgroundColor="{StaticResource Primary}" Command="{Binding LoginCommand}" TextColor="White" FontAttributes="Bold" CornerRadius="20" />
+                            <StackLayout Orientation="Horizontal" Padding="15, 5" >
+                                <Label Text="Register" HorizontalOptions="StartAndExpand"  TextColor="{StaticResource Primary}" FontAttributes="Bold" VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Register"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label Text="Forgot password?"  HorizontalTextAlignment="End" VerticalTextAlignment="Center" >
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ForgetPassword"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
